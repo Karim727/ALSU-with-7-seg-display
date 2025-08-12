@@ -55,8 +55,10 @@ always@(*)begin
 end
 
 always@(posedge clk, posedge rst) begin
-    if(rst)
+    if(rst)begin
         digit_period <= 0;
+        digit_sel <= 0;
+    end
     else begin
         if(digit_period >= 99_999) begin
             digit_period <=0;
@@ -66,4 +68,5 @@ always@(posedge clk, posedge rst) begin
             digit_period =  digit_period + 1;
     end
 end
+
 endmodule
