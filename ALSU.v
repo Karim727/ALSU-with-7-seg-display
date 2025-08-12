@@ -15,31 +15,7 @@ reg op_invalid; // Flag to indicate invalid operation
 reg [2:0] A_reg,B_reg,opcode_reg;
 wire [5:0] out_add,out_mult;
 reg cin_reg,serial_in_reg,red_op_A_reg,red_op_B_reg,bypass_A_reg,bypass_B_reg,direction_reg;
-
-// generate
-// if (FULL_ADDER == "ON")
-//     c_addsub_1 adder_cin_ip (
-//         .A   (A_reg),    // input wire [2 : 0] A
-//         .B   (B_reg),    // input wire [2 : 0] B
-//         .C_IN(cin_reg),  // input wire C_IN
-//         .S   (out_add)       // output wire [2 : 0] S
-//     );
-// else
-//     c_addsub_1 adder_no_cin_ip (
-//         .A   (A_reg),  // input wire [2 : 0] A
-//         .B   (B_reg),  // input wire [2 : 0] B
-//         .C_IN(0),      // input wire C_IN
-//         .S   (out_add)     // output wire [2 : 0] S
-//     );
-// endgenerate
-
-
-// mult_gen_1 multiplier_ip (
-//     .A(A_reg),      // input wire [2 : 0] A
-//     .B(B_reg),      // input wire [2 : 0] B
-//     .P(out_mult)      // output wire [5 : 0] P
-// );
-
+    
 seven_seg_controller uut_seven_seg(
     .clk(clk),
     .rst(rst),
@@ -163,3 +139,4 @@ end
 
 
 endmodule
+
